@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MUO Community</title>
+<meta name="description" content="منصة إعلامية رقمية تجمع أخبار اللجنة المنظمة وبودكاستها ومجلتها وبودكاستات المجتمع الطلابي.">
+<meta name="theme-color" content="#3B2459">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--p:#3B2459;--p2:#583682;--pl:#EFE9F6;--o:#F98001;--od:#B85A00;--ol:#FFF1E0;--bg:#FBF9FD;--ink:#231633;--mut:#6B5F7A;--line:#E4DCEE;--r:14px}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:70px}
+body{font:400 16px/1.8 'IBM Plex Sans Arabic',system-ui,sans-serif;background:var(--bg);color:var(--ink);padding-bottom:calc(env(safe-area-inset-bottom) + 0px)}
+h1,h2,h3{font-family:'Readex Pro','IBM Plex Sans Arabic',sans-serif;line-height:1.4;font-weight:700}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--o);outline-offset:2px}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:20;background:var(--p);color:#fff;padding-top:env(safe-area-inset-top)}
+header .wrap{display:flex;align-items:center;gap:18px;height:62px}
+header img{height:38px}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+nav a{padding:6px 12px;border-radius:99px;white-space:nowrap;font-size:15px;opacity:.85}
+nav a.on,nav a:hover{background:rgba(255,255,255,.14);opacity:1}
+nav a.com.on{background:var(--o);color:#fff}
+.hero{background:var(--p) url(assets/pattern.png) center/700px;position:relative;color:#fff;padding:54px 0 60px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--p) 35%,rgba(59,36,89,.82))}
+.hero .wrap{position:relative;display:grid;gap:28px;grid-template-columns:1.2fr 1fr;align-items:center}
+.hero h1{font-size:clamp(28px,5vw,46px)}
+.hero p{opacity:.85;margin:12px 0 22px;max-width:46ch}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:99px;padding:10px 22px;background:var(--o);color:#fff;font-weight:700;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--od)}
+.btn.ghost{background:transparent;border:1.5px solid currentColor;color:inherit}
+.btn.sm{padding:5px 14px;font-size:14px}
+.btn.red{background:#B3261E}
+.feat{background:#fff;color:var(--ink);border-radius:var(--r);overflow:hidden;display:block}
+.feat .cv{aspect-ratio:16/9}
+.feat div.t{padding:16px 18px}
+section.s{padding:38px 0 6px}
+.sh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;gap:10px}
+.sh h2{font-size:22px}
+.sh a{color:var(--p2);font-size:14px;font-weight:500}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.card .b{padding:12px 14px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card h3{font-size:16.5px}
+.card p{font-size:14px;color:var(--mut)}
+a.card:hover{border-color:var(--p2)}
+.cv{background:var(--p) url(assets/pattern.png) center/260px;aspect-ratio:16/10;background-blend-mode:soft-light;object-fit:cover;width:100%}
+.sq{aspect-ratio:1/1}.pt{aspect-ratio:3/4}
+.meta{font-size:13px;color:var(--mut)}
+.tag{display:inline-block;font-size:12.5px;padding:1px 10px;border-radius:99px;background:var(--pl);color:var(--p);align-self:flex-start;font-weight:500}
+.com .tag{background:var(--ol);color:var(--od)}
+.band{background:var(--ol);margin-top:40px;padding:6px 0 40px;border-block:1px solid #F6DDBA}
+.band .sh a{color:var(--od)}
+.com .card{border-color:#F3D8B3}
+.demo{background:var(--ol);color:var(--od);text-align:center;font-size:13.5px;padding:4px}
+.page{padding:32px 0 60px}
+.page h1{font-size:clamp(26px,4vw,38px);margin-bottom:8px}
+.art{max-width:68ch;margin:0 auto}
+.art .cv{border-radius:var(--r);margin:18px 0}
+.art p{margin:0 0 1.1em;font-size:18px;line-height:2}
+.art h2{margin:1.4em 0 .5em;font-size:22px}
+.art img{border-radius:var(--r);margin:1em 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 22px}
+.chips a{padding:4px 14px;border-radius:99px;border:1px solid var(--line);background:#fff;font-size:14px}
+.chips a.on{background:var(--p);color:#fff;border-color:var(--p)}
+.com .chips a.on{background:var(--o);border-color:var(--o)}
+.prog{display:grid;grid-template-columns:220px 1fr;gap:24px;margin-bottom:26px}
+.ep{display:flex;gap:12px;align-items:center;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:8px}
+.ep .pl{flex:none;width:42px;height:42px;border-radius:50%;border:0;background:var(--p);color:#fff;cursor:pointer;font-size:15px}
+.com .ep .pl{background:var(--o)}
+.ep.cur{border-color:var(--o)}
+.empty{border:1.5px dashed var(--line);border-radius:var(--r);padding:28px;text-align:center;color:var(--mut);background:#fff}
+footer{background:var(--p);color:#D9CCEA;padding:34px 0 120px;margin-top:50px;font-size:14px}
+footer img{height:56px;margin-bottom:10px}
+#player{position:fixed;inset:auto 0 0 0;background:var(--p);color:#fff;z-index:30;padding:8px 14px calc(env(safe-area-inset-bottom) + 8px);display:none;border-top:3px solid var(--o)}
+#player.on{display:block}
+#player .in{max-width:1120px;margin:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+#player .ti{flex:1 1 180px;min-width:0;font-size:14px}
+#player .ti b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#player button{background:none;border:0;color:#fff;font-size:18px;cursor:pointer;padding:4px 8px}
+#player #pp{background:var(--o);border-radius:50%;width:40px;height:40px}
+#player input[type=range]{accent-color:var(--o)}
+#seek{flex:2 1 200px}
+.f{display:grid;gap:12px;max-width:640px}
+.f label{display:grid;gap:4px;font-weight:500;font-size:14.5px}
+.f input,.f select,.f textarea{padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.f textarea{min-height:140px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.tabs button{padding:5px 14px;border:1px solid var(--line);border-radius:99px;background:#fff;cursor:pointer}
+.tabs button.on{background:var(--p);color:#fff}
+.it{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:10px 12px;background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:6px;flex-wrap:wrap}
+.toast{position:fixed;top:72px;inset-inline:0;margin:auto;width:max-content;max-width:90%;background:var(--ink);color:#fff;padding:8px 18px;border-radius:99px;z-index:50}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.prog{grid-template-columns:1fr}.prog .cv{max-width:200px}#player{padding-inline:10px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="#/" aria-label="MUO Community"><img src="assets/logo-white.png" alt="MUO Community"></a>
+  <nav id="nav" aria-label="التنقل الرئيسي">
+    <a href="#/news" data-k="news">الأخبار</a><a href="#/podcast" data-k="podcast">بودكاست اللجنة</a>
+    <a href="#/magazine" data-k="magazine">المجلة</a><a href="#/community" data-k="community" class="com">بودكاستات المجتمع</a>
+  </nav>
+</div></header>
+<div id="demo" class="demo" hidden>المحتوى المعروض هنا تجريبي (Demo Content). اربط Supabase في config.js لعرض المحتوى الفعلي.</div>
+<main id="app" aria-live="polite"></main>
+<footer><div class="wrap">
+  <img src="assets/logo-white.png" alt="">
+  <p id="ft">منصة إعلامية رقمية تقودها اللجنة المنظمة بجامعة المشرق.</p>
+  <p style="margin-top:8px"><button class="btn ghost sm" id="inst" hidden>ثبّت التطبيق</button> <a href="#/admin" style="opacity:.5">إدارة</a></p>
+</div></footer>
+<div id="player" role="region" aria-label="مشغل الصوت">
+  <audio id="au" preload="metadata"></audio>
+  <div class="in">
+    <button id="nx" aria-label="الحلقة التالية">⏮</button>
+    <button id="pp" aria-label="تشغيل">▶</button>
+    <button id="pv" aria-label="الحلقة السابقة">⏭</button>
+    <div class="ti"><b id="pt"></b><span id="ps" class="meta" style="color:#D9CCEA"></span></div>
+    <input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="التقدم">
+    <span id="tm" class="meta" style="color:#fff;min-width:88px;direction:ltr">0:00 / 0:00</span>
+    <button id="sp" aria-label="سرعة التشغيل">1×</button>
+    <input id="vol" type="range" min="0" max="1" step="0.05" value="1" style="width:70px" aria-label="مستوى الصوت">
+    <button id="cl" aria-label="إغلاق المشغل">✕</button>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script>
+const $=s=>document.querySelector(s),C=window.MUO_CONFIG||{};
+const sb=(C.SUPABASE_URL&&C.SUPABASE_ANON_KEY&&window.supabase)?supabase.createClient(C.SUPABASE_URL,C.SUPABASE_ANON_KEY):null;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fd=d=>d?new Date(d).toLocaleDateString('ar',{year:'numeric',month:'long',day:'numeric'}):'';
+const fm=s=>{s=Math.floor(s||0);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+const toast=m=>{const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.append(t);setTimeout(()=>t.remove(),2600)};
+
+/* ---------- بيانات ---------- */
+const NEWS_CATS=['أخبار','إعلانات','أنشطة','تغطيات'],COM_CATS=['الطب والعلوم الصحية','الهندسة والتكنولوجيا','الثقافة والمعرفة','ريادة الأعمال','التصميم والفنون','العلوم والبحث العلمي','التجارب الطلابية'];
+const D0='2026-11-10T09:00:00Z';
+const DEMO={
+ news_articles:[{id:'d1',title:'انطلاق أعمال اللجنة المنظمة للفصل الجديد',excerpt:'نص تجريبي يوضح شكل بطاقة الخبر الرئيسي في المنصة.',body:'هذا محتوى تجريبي.\n\n## عنوان فرعي\n\nيمكن للأدمن كتابة فقرات وعناوين وروابط صور داخل الخبر.',category:'أخبار',published_at:D0},{id:'d2',title:'إعلان: فتح باب المشاركة في الأنشطة',excerpt:'مثال على إعلان رسمي.',body:'محتوى تجريبي.',category:'إعلانات',published_at:'2026-11-05T09:00:00Z'},{id:'d3',title:'تغطية: ورشة الإعلام الرقمي',excerpt:'مثال على تغطية فعالية.',body:'محتوى تجريبي.',category:'تغطيات',published_at:'2026-10-28T09:00:00Z'}],
+ official_podcast_programs:[{id:'p1',title:'برنامج تجريبي',presenter:'مقدم تجريبي',description:'وصف تجريبي للبرنامج الرسمي.',published_at:D0}],
+ official_podcast_episodes:[{id:'e1',program_id:'p1',title:'الحلقة الأولى (تجريبية)',description:'لا يوجد ملف صوتي في المحتوى التجريبي.',audio_url:'',duration:0,published_at:D0},{id:'e2',program_id:'p1',title:'الحلقة الثانية (تجريبية)',description:'',audio_url:'',published_at:'2026-11-12T09:00:00Z'}],
+ magazine_issues:[{id:'m1',title:'العدد التجريبي',number:1,description:'وصف تجريبي للعدد.',published_at:D0}],
+ magazine_articles:[{id:'a1',issue_id:'m1',title:'مقال تجريبي',category:'ثقافة',body:'محتوى تجريبي.\n\n## عنوان فرعي\n\nنص القراءة بخط مريح وسطر بطول مناسب.',published_at:D0}],
+ community_podcast_programs:[{id:'c1',title:'برنامج مجتمعي تجريبي',presenter:'طالب تجريبي',producer:'مجموعة تجريبية',category:'الثقافة والمعرفة',description:'وصف تجريبي.',published_at:D0}],
+ community_podcast_episodes:[{id:'ce1',program_id:'c1',title:'حلقة مجتمعية تجريبية',audio_url:'',published_at:D0}]
+};
+const cache={};
+async function load(t){
+  if(!sb)return DEMO[t]||[];
+  if(cache[t])return cache[t];
+  const {data,error}=await sb.from(t).select('*').eq('status','published').order('published_at',{ascending:false});
+  if(error)throw error;return cache[t]=data;
+}
+const loadAll=(...t)=>Promise.all(t.map(load));
+
+/* ---------- مكونات ---------- */
+const cover=(u,cls='')=>u?`<img class="cv ${cls}" src="${esc(u)}" alt="" loading="lazy">`:`<div class="cv ${cls}" role="img" aria-label="بدون غلاف"></div>`;
+const newsCard=n=>`<a class="card" href="#/news/${n.id}">${cover(n.cover_url)}<div class="b"><span class="tag">${esc(n.category)}</span><h3>${esc(n.title)}</h3><p>${esc(n.excerpt)}</p><span class="meta">${fd(n.published_at)}</span></div></a>`;
+const progCard=(p,base)=>`<a class="card" href="#/${base}/${p.id}">${cover(p.cover_url,'sq')}<div class="b">${p.category?`<span class="tag">${esc(p.category)}</span>`:''}<h3>${esc(p.title)}</h3><p>${esc(p.presenter||'')}</p></div></a>`;
+const issueCard=i=>`<a class="card" href="#/magazine/${i.id}">${cover(i.cover_url,'pt')}<div class="b"><h3>${esc(i.title)}</h3><span class="meta">العدد ${esc(i.number??'')} · ${fd(i.published_at)}</span></div></a>`;
+const artCard=a=>`<a class="card" href="#/article/${a.id}"><div class="b"><span class="tag">${esc(a.category||'مقال')}</span><h3>${esc(a.title)}</h3><span class="meta">${fd(a.published_at)}</span></div></a>`;
+const empty=(m,cta='')=>`<div class="empty">${m}${cta}</div>`;
+const list=(a,f,m)=>a.length?`<div class="grid">${a.map(f).join('')}</div>`:empty(m);
+const sec=(t,h,body,cls='')=>`<section class="s ${cls}"><div class="wrap"><div class="sh"><h2>${t}</h2>${h?`<a href="${h}">عرض الكل</a>`:''}</div>${body}</div></section>`;
+function body(t=''){return t.split(/\n{2,}/).map(b=>{b=b.trim();if(!b)return'';if(b.startsWith('## '))return`<h2>${esc(b.slice(3))}</h2>`;if(/^https?:\/\/\S+\.(png|jpe?g|webp|gif)$/i.test(b))return`<img src="${esc(b)}" alt="" loading="lazy">`;return`<p>${esc(b).replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" style="color:var(--p2);text-decoration:underline" rel="noopener">$1</a>').replace(/\n/g,'<br>')}</p>`}).join('')}
+const shareBtn=()=>`<button class="btn ghost sm" onclick="share()">مشاركة الرابط</button>`;
+window.share=async()=>{const u=location.href;try{navigator.share?await navigator.share({title:document.title,url:u}):(await navigator.clipboard.writeText(u),toast('تم نسخ الرابط'))}catch{}};
+
+/* ---------- الصفحات ---------- */
+const V={};
+V.home=async()=>{
+  const [n,pp,pe,mi,ma,cp]=await loadAll('news_articles','official_podcast_programs','official_podcast_episodes','magazine_issues','magazine_articles','community_podcast_programs');
+  const f=n[0],eps=pe.slice(0,4).map(e=>({e,p:pp.find(x=>x.id===e.program_id)}));
+  window._q=pe;
+  return `<div class="hero"><div class="wrap"><div><h1>إعلام ومعرفة وأصوات من مجتمع جامعة المشرق</h1><p>أخبار اللجنة المنظمة، وبودكاستها، ومجلتها، وبرامج الطلاب والمبدعين في مكان واحد.</p><a class="btn" href="#/podcast">استمع إلى البودكاست</a> <a class="btn ghost" href="#/news">آخر الأخبار</a></div>
+  ${f?`<a class="feat" href="#/news/${f.id}">${cover(f.cover_url)}<div class="t"><span class="tag">${esc(f.category)}</span><h3 style="margin-top:6px">${esc(f.title)}</h3><span class="meta">${fd(f.published_at)}</span></div></a>`:empty('لا يوجد خبر مميز بعد.')}</div></div>`
+  +sec('أحدث الأخبار والإعلانات','#/news',list(n.slice(1,5),newsCard,'لم تُنشر أخبار بعد.'))
+  +sec('برامج اللجنة','#/podcast',list(pp.slice(0,4),p=>progCard(p,'podcast'),'لم تُضف برامج رسمية بعد.'))
+  +sec('أحدث الحلقات الرسمية','',eps.length?eps.map(({e,p})=>epRow(e,p,'pe')).join(''):empty('لا توجد حلقات منشورة بعد.'))
+  +sec('أعداد المجلة','#/magazine',list(mi.slice(0,4),issueCard,'لم تصدر أعداد بعد.'))
+  +sec('مقالات مختارة','#/magazine',list(ma.slice(0,3),artCard,'لا توجد مقالات منشورة بعد.'))
+  +`<div class="com band">`+sec('بودكاستات المجتمع','#/community',list(cp.slice(0,4),p=>progCard(p,'community'),'لم تُضف بودكاستات مجتمعية بعد.'))+`</div>`;
+};
+V.news=async(id,qs)=>{
+  const n=await load('news_articles');
+  if(id){const a=n.find(x=>x.id===id);if(!a)return nf();document.title=a.title+' — MUO Community';
+    return `<div class="page wrap"><div class="art"><span class="tag">${esc(a.category)}</span><h1>${esc(a.title)}</h1><span class="meta">${fd(a.published_at)}</span>${a.cover_url?cover(a.cover_url):''}${body(a.body)}${shareBtn()}</div></div>`}
+  const c=qs.get('c'),L=c?n.filter(x=>x.category===c):n;
+  return `<div class="page wrap"><h1>الأخبار والإعلانات</h1><div class="chips"><a href="#/news" class="${c?'':'on'}">الكل</a>${NEWS_CATS.map(k=>`<a href="#/news?c=${encodeURIComponent(k)}" class="${c===k?'on':''}">${k}</a>`).join('')}</div>${list(L,newsCard,'لا توجد أخبار في هذا التصنيف.')}</div>`;
+};
+function epRow(e,p,src){return `<div class="ep" data-id="${e.id}"><button class="pl" onclick="playEp('${e.id}','${src}')" aria-label="تشغيل ${esc(e.title)}">▶</button><div style="flex:1"><b>${esc(e.title)}</b><div class="meta">${p?esc(p.title)+' · ':''}${fd(e.published_at)}${e.duration?' · '+fm(e.duration):''}</div>${e.description?`<div class="meta">${esc(e.description)}</div>`:''}</div></div>`}
+async function progPage(kind,id,qs){
+  const com=kind==='community',pt=com?'community_podcast_programs':'official_podcast_programs',et=com?'community_podcast_episodes':'official_podcast_episodes',src=com?'ce':'pe',base=com?'community':'podcast';
+  const [P,E]=await loadAll(pt,et);
+  if(id){const p=P.find(x=>x.id===id);if(!p)return nf();const L=E.filter(e=>e.program_id===id);window._q=L;
+    return `<div class="page wrap ${com?'com':''}"><div class="prog">${cover(p.cover_url,'sq')}<div>${p.category?`<span class="tag">${esc(p.category)}</span>`:''}<h1>${esc(p.title)}</h1><p>${esc(p.description)}</p><p class="meta">${com?'تقديم':'مقدم البرنامج'}: ${esc(p.presenter||'—')}${p.producer?' · إنتاج: '+esc(p.producer):''}</p></div></div><h2 style="margin-bottom:12px">الحلقات</h2>${L.length?L.map(e=>epRow(e,null,src)).join(''):empty('لا توجد حلقات منشورة بعد.')}</div>`}
+  const c=qs.get('c'),L=c?P.filter(x=>x.category===c):P;
+  return `<div class="page wrap ${com?'com':''}"><h1>${com?'بودكاستات المجتمع':'بودكاست اللجنة'}</h1><p class="meta">${com?'برامج ينتجها الطلاب والمبدعون.':'الإنتاج الصوتي الرسمي للجنة المنظمة.'}</p>${com?`<div class="chips"><a href="#/community" class="${c?'':'on'}">الكل</a>${COM_CATS.map(k=>`<a href="#/community?c=${encodeURIComponent(k)}" class="${c===k?'on':''}">${k}</a>`).join('')}</div>`:'<div style="height:18px"></div>'}${list(L,p=>progCard(p,base),'لا توجد برامج منشورة بعد.')}</div>`;
+}
+V.podcast=(id,qs)=>progPage('official',id,qs);V.community=(id,qs)=>progPage('community',id,qs);
+V.magazine=async id=>{
+  const [I,A]=await loadAll('magazine_issues','magazine_articles');
+  if(id){const i=I.find(x=>x.id===id);if(!i)return nf();const L=A.filter(a=>a.issue_id===id);
+    return `<div class="page wrap"><div class="prog">${cover(i.cover_url,'pt')}<div><h1>${esc(i.title)}</h1><p class="meta">العدد ${esc(i.number??'')} · ${fd(i.published_at)}</p><p>${esc(i.description)}</p>${i.pdf_url?`<a class="btn" href="${esc(i.pdf_url)}" target="_blank" rel="noopener">قراءة النسخة PDF</a> `:''}${shareBtn()}</div></div><h2 style="margin-bottom:12px">مقالات العدد</h2>${list(L,artCard,'لا توجد مقالات منشورة في هذا العدد.')}</div>`}
+  return `<div class="page wrap"><h1>المجلة الرقمية</h1><div style="height:18px"></div>${list(I,issueCard,'لم تصدر أعداد بعد.')}</div>`;
+};
+V.article=async id=>{const A=await load('magazine_articles'),a=A.find(x=>x.id===id);if(!a)return nf();document.title=a.title+' — MUO Community';
+  return `<div class="page wrap"><div class="art"><span class="tag">${esc(a.category||'مقال')}</span><h1>${esc(a.title)}</h1><span class="meta">${fd(a.published_at)}</span>${a.cover_url?cover(a.cover_url):''}${body(a.body)}${shareBtn()} <a class="btn ghost sm" href="#/magazine/${a.issue_id}">العودة إلى العدد</a></div></div>`};
+const nf=()=>`<div class="page wrap">${empty('الصفحة غير موجودة.',' <p><a class="btn sm" href="#/">الصفحة الرئيسية</a></p>')}</div>`;
+
+/* ---------- الإدارة (Supabase Auth + RLS) ---------- */
+const AD={
+ news_articles:{n:'الأخبار',f:[['title','العنوان','t'],['category','التصنيف','s',NEWS_CATS],['excerpt','المقتطف','a'],['body','المحتوى (## للعناوين، رابط صورة في سطر مستقل)','A'],['cover_url','صورة الغلاف','c']]},
+ official_podcast_programs:{n:'البرامج الرسمية',f:[['title','اسم البرنامج','t'],['presenter','المقدم','t'],['description','الوصف','a'],['cover_url','الغلاف','c']]},
+ official_podcast_episodes:{n:'الحلقات الرسمية',f:[['program_id','البرنامج','r','official_podcast_programs'],['title','العنوان','t'],['description','الوصف','a'],['audio_url','الملف الصوتي','f','audio/*'],['duration','المدة بالثواني','n']]},
+ magazine_issues:{n:'أعداد المجلة',f:[['title','عنوان العدد','t'],['number','رقم العدد','n'],['description','الوصف','a'],['cover_url','الغلاف','c'],['pdf_url','ملف PDF','f','application/pdf']]},
+ magazine_articles:{n:'مقالات المجلة',f:[['issue_id','العدد','r','magazine_issues'],['title','العنوان','t'],['category','التصنيف','t'],['body','المحتوى','A'],['cover_url','الصورة','c']]},
+ community_podcast_programs:{n:'برامج المجتمع',f:[['title','اسم البرنامج','t'],['category','المجال','s',COM_CATS],['presenter','المقدم','t'],['producer','المنتج','t'],['description','الوصف','a'],['cover_url','الغلاف','c']]},
+ community_podcast_episodes:{n:'حلقات المجتمع',f:[['program_id','البرنامج','r','community_podcast_programs'],['title','العنوان','t'],['description','الوصف','a'],['audio_url','الملف الصوتي','f','audio/*'],['duration','المدة بالثواني','n']]}
+};
+let adT='news_articles',adEdit=null;
+V.admin=async()=>{
+  if(!sb)return `<div class="page wrap">${empty('اربط Supabase في config.js لتفعيل لوحة الإدارة.')}</div>`;
+  const {data:{session}}=await sb.auth.getSession();
+  if(!session)return `<div class="page wrap"><h1>دخول الإدارة</h1><form class="f" id="lg" style="margin-top:16px"><label>البريد<input name="e" type="email" required autocomplete="username"></label><label>كلمة المرور<input name="p" type="password" required autocomplete="current-password"></label><button class="btn">دخول</button></form></div>`;
+  const T=AD[adT],{data:rows,error}=await sb.from(adT).select('*').order('created_at',{ascending:false});
+  const counts=await Promise.all(Object.keys(AD).map(async k=>{const r=await sb.from(k).select('id',{count:'exact',head:true}).eq('status','published');return [k,r.count||0]}));
+  const refs={};for(const f of T.f)if(f[2]==='r')refs[f[0]]=(await sb.from(f[3]).select('id,title')).data||[];
+  const ed=adEdit?rows?.find(r=>r.id===adEdit):null;
+  return `<div class="page wrap"><div class="row" style="justify-content:space-between"><h1>لوحة الإدارة</h1><button class="btn ghost sm" id="lo">خروج</button></div>
+  <p class="meta">المنشور: ${counts.map(([k,c])=>AD[k].n+' '+c).join(' · ')}</p>
+  <div class="tabs">${Object.entries(AD).map(([k,v])=>`<button data-t="${k}" class="${k===adT?'on':''}">${v.n}</button>`).join('')}</div>
+  ${error?empty(esc(error.message)):''}
+  <h2 style="margin:10px 0">${ed?'تعديل':'إضافة'} — ${T.n}</h2>
+  <form class="f" id="fm">${T.f.map(([k,l,t,x])=>{const v=ed?.[k]??'';return `<label>${l}${t==='t'?`<input name="${k}" value="${esc(v)}" required>`:t==='n'?`<input name="${k}" type="number" value="${esc(v)}">`:t==='a'?`<textarea name="${k}" style="min-height:70px">${esc(v)}</textarea>`:t==='A'?`<textarea name="${k}">${esc(v)}</textarea>`:t==='s'?`<select name="${k}">${x.map(o=>`<option ${o===v?'selected':''}>${o}</option>`).join('')}</select>`:t==='r'?`<select name="${k}" required><option value="">اختر…</option>${(refs[k]||[]).map(o=>`<option value="${o.id}" ${o.id===v?'selected':''}>${esc(o.title)}</option>`).join('')}</select>`:`<input name="${k}" type="file" accept="${t==='c'?'image/*':x}">${v?`<span class="meta">الملف الحالي محفوظ؛ ارفع ملفاً جديداً لاستبداله.</span>`:''}`}</label>`}).join('')}
+  <div class="row"><button class="btn" data-s="draft">حفظ كمسودة</button><button class="btn" data-s="published" style="background:var(--p)">حفظ ونشر</button>${ed?'<button type="button" class="btn ghost" id="cn">إلغاء</button>':''}</div></form>
+  <h2 style="margin:28px 0 10px">المحتوى</h2>${(rows||[]).map(r=>`<div class="it"><span><b>${esc(r.title)}</b> <span class="tag">${{draft:'مسودة',published:'منشور',archived:'مؤرشف'}[r.status]}</span></span><span class="row">
+  <button class="btn ghost sm" data-a="edit" data-id="${r.id}">تعديل</button>
+  ${r.status==='published'?`<button class="btn ghost sm" data-a="draft" data-id="${r.id}">إلغاء النشر</button>`:`<button class="btn sm" data-a="published" data-id="${r.id}">نشر</button>`}
+  ${r.status!=='archived'?`<button class="btn ghost sm" data-a="archived" data-id="${r.id}">أرشفة</button>`:''}
+  <button class="btn red sm" data-a="del" data-id="${r.id}">حذف</button></span></div>`).join('')||empty('لا يوجد محتوى بعد.')}</div>`;
+};
+async function upload(file){
+  const p=`${Date.now()}-${Math.random().toString(36).slice(2,8)}.${file.name.split('.').pop()}`;
+  const {error}=await sb.storage.from('media').upload(p,file,{contentType:file.type});if(error)throw error;
+  const url=sb.storage.from('media').getPublicUrl(p).data.publicUrl;
+  await sb.from('media_assets').insert({path:p,url,kind:file.type});return url;
+}
+document.addEventListener('submit',async e=>{
+  if(e.target.id==='lg'){e.preventDefault();const f=new FormData(e.target),{error}=await sb.auth.signInWithPassword({email:f.get('e'),password:f.get('p')});if(error)return toast('بيانات الدخول غير صحيحة');route()}
+  if(e.target.id==='fm'){e.preventDefault();const st=e.submitter?.dataset.s||'draft',f=new FormData(e.target),o={status:st,updated_at:new Date().toISOString()};
+    try{for(const [k,l,t] of AD[adT].f){const v=f.get(k);if(t==='c'||t==='f'){if(v&&v.size)o[k]=await upload(v)}else if(t==='n')o[k]=v===''?null:+v;else o[k]=v}
+      if(st==='published')o.published_at=o.published_at||new Date().toISOString();
+      if(!adEdit)o.slug=(o.title||'x').trim().replace(/\s+/g,'-')+'-'+Math.random().toString(36).slice(2,6);
+      const q=adEdit?sb.from(adT).update(o).eq('id',adEdit):sb.from(adT).insert(o);const {error}=await q;if(error)throw error;
+      toast(st==='published'?'تم النشر':'تم حفظ المسودة');adEdit=null;Object.keys(cache).forEach(k=>delete cache[k]);route()}
+    catch(x){toast('تعذر الحفظ: '+x.message)}}
+});
+document.addEventListener('click',async e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.id==='lo'){await sb.auth.signOut();route()}
+  if(b.id==='cn'){adEdit=null;route()}
+  if(b.dataset.t){adT=b.dataset.t;adEdit=null;route()}
+  if(b.dataset.a){const id=b.dataset.id,a=b.dataset.a;
+    if(a==='edit'){adEdit=id;route();scrollTo(0,0);return}
+    if(a==='del'){if(!confirm('هل تريد حذف هذا العنصر نهائياً؟ لا يمكن التراجع.'))return;const {error}=await sb.from(adT).delete().eq('id',id);if(error)return toast(error.message);toast('تم الحذف')}
+    else{const o={status:a};if(a==='published')o.published_at=new Date().toISOString();const {error}=await sb.from(adT).update(o).eq('id',id);if(error)return toast(error.message);toast(a==='published'?'تم النشر':a==='draft'?'أُلغي النشر':'تمت الأرشفة')}
+    Object.keys(cache).forEach(k=>delete cache[k]);route()}
+});
+
+/* ---------- المشغل ---------- */
+const au=$('#au'),pl=$('#player');let Q=[],qi=-1,SP=[1,1.25,1.5,2,.75],spi=0,cur=null;
+window.playEp=async(id,src)=>{
+  const t=src==='ce'?'community_podcast_episodes':'official_podcast_episodes';
+  Q=window._q||await load(t);qi=Q.findIndex(e=>e.id===id);start();
+};
+function start(){
+  const e=Q[qi];if(!e)return;cur=e;pl.classList.add('on');$('#pt').textContent=e.title;$('#ps').textContent=fd(e.published_at);
+  if(!e.audio_url){au.removeAttribute('src');$('#ps').textContent='لا يوجد ملف صوتي لهذه الحلقة';sync();return}
+  au.src=e.audio_url;au.playbackRate=SP[spi];
+  au.onloadedmetadata=()=>{const p=+localStorage.getItem('pos:'+e.id);if(p>5&&p<au.duration-5)au.currentTime=p};
+  au.play().catch(()=>toast('اضغط تشغيل للبدء'));sync();
+}
+function sync(){$('#pp').textContent=au.paused?'▶':'⏸';$('#pp').setAttribute('aria-label',au.paused?'تشغيل':'إيقاف مؤقت');document.querySelectorAll('.ep').forEach(x=>x.classList.toggle('cur',cur&&x.dataset.id===cur.id))}
+$('#pp').onclick=()=>au.paused?au.play():au.pause();
+au.onplay=au.onpause=sync;
+au.ontimeupdate=()=>{if(au.duration){$('#seek').value=au.currentTime/au.duration*100;$('#tm').textContent=fm(au.currentTime)+' / '+fm(au.duration);if(cur&&Math.round(au.currentTime)%5===0)localStorage.setItem('pos:'+cur.id,au.currentTime)}};
+$('#seek').oninput=e=>{if(au.duration)au.currentTime=e.target.value/100*au.duration};
+$('#vol').oninput=e=>au.volume=e.target.value;
+$('#sp').onclick=()=>{spi=(spi+1)%SP.length;au.playbackRate=SP[spi];$('#sp').textContent=SP[spi]+'×'};
+$('#nx').onclick=()=>{if(qi<Q.length-1){qi++;start()}};$('#pv').onclick=()=>{if(qi>0){qi--;start()}};
+au.onended=()=>{if(cur)localStorage.removeItem('pos:'+cur.id);$('#nx').click()};
+$('#cl').onclick=()=>{au.pause();pl.classList.remove('on')};
+
+/* ---------- الراوتر ---------- */
+async function route(){
+  const h=location.hash.slice(2),[path,q]=h.split('?'),[k='home',id]=path.split('/'),qs=new URLSearchParams(q||'');
+  document.title='MUO Community';
+  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.k===k||(k==='article'&&a.dataset.k==='magazine')));
+  $('#demo').hidden=!!sb||k==='admin';
+  const app=$('#app');app.innerHTML='<div class="page wrap"><div class="empty">جارٍ التحميل…</div></div>';
+  try{app.innerHTML=await (V[k]||nf)(id,qs)}catch(x){app.innerHTML=`<div class="page wrap">${empty('تعذر تحميل المحتوى. تحقق من الاتصال ثم أعد المحاولة.',`<p><button class="btn sm" onclick="route()">إعادة المحاولة</button></p>`)}</div>`}
+  if(k!=='admin')scrollTo(0,0);
+}
+window.route=route;addEventListener('hashchange',route);route();
+if(sb)sb.from('platform_settings').select('*').eq('key','footer').maybeSingle().then(r=>{if(r.data?.value?.text)$('#ft').textContent=r.data.value.text});
+
+/* ---------- PWA ---------- */
+if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
+let dp;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;$('#inst').hidden=false});
+$('#inst').onclick=async()=>{dp?.prompt();dp=null;$('#inst').hidden=true};
+</script>
+</body>
+</html>
